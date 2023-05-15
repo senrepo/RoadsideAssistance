@@ -5,13 +5,18 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadsideAssistanceBL", "RoadsideAssistanceBL\RoadsideAssistanceBL.csproj", "{441CB6A8-F151-4F24-A462-0D2E01846294}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadsideAssistanceBL.UnitTests", "RoadsideAssistanceBL.UnitTests\RoadsideAssistanceBL.UnitTests.csproj", "{998FC051-ACF3-4A8C-8163-C35E525B4D1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadsideAssistanceBL.UnitTests", "RoadsideAssistanceBL.UnitTests\RoadsideAssistanceBL.UnitTests.csproj", "{998FC051-ACF3-4A8C-8163-C35E525B4D1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadsideAssistanceBL.IntegrationTests", "RoadsideAssistanceBL.IntegrationTests\RoadsideAssistanceBL.IntegrationTests.csproj", "{47C1D610-AEAF-4646-8843-3509021DA0E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadsideAssistanceBL.IntegrationTests", "RoadsideAssistanceBL.IntegrationTests\RoadsideAssistanceBL.IntegrationTests.csproj", "{47C1D610-AEAF-4646-8843-3509021DA0E3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadsideAssistanceApi", "RoadsideAssistanceApi\RoadsideAssistanceApi.csproj", "{8AE3B0EE-DDF9-4A39-BBA4-3CDC75C2A6D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadsideAssistanceApi.Tests", "RoadsideAssistanceApi.Tests\RoadsideAssistanceApi.Tests.csproj", "{F187381F-5C29-43A9-8ADD-7C794814CC38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadsideAssistanceApi.Tests", "RoadsideAssistanceApi.Tests\RoadsideAssistanceApi.Tests.csproj", "{F187381F-5C29-43A9-8ADD-7C794814CC38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DB2B7CDA-0B16-424C-83CC-E7709B1B4002}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
