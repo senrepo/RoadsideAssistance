@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadsideAssistanceBL", "RoadsideAssistanceBL\RoadsideAssistanceBL.csproj", "{441CB6A8-F151-4F24-A462-0D2E01846294}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadsideAssistanceBL.UnitTests", "RoadsideAssistanceBL.UnitTests\RoadsideAssistanceBL.UnitTests.csproj", "{998FC051-ACF3-4A8C-8163-C35E525B4D1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadsideAssistanceBL.IntegrationTests", "RoadsideAssistanceBL.IntegrationTests\RoadsideAssistanceBL.IntegrationTests.csproj", "{47C1D610-AEAF-4646-8843-3509021DA0E3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadsideAssistanceApi", "RoadsideAssistanceApi\RoadsideAssistanceApi.csproj", "{8AE3B0EE-DDF9-4A39-BBA4-3CDC75C2A6D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadsideAssistanceApi.Tests", "RoadsideAssistanceApi.Tests\RoadsideAssistanceApi.Tests.csproj", "{F187381F-5C29-43A9-8ADD-7C794814CC38}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{441CB6A8-F151-4F24-A462-0D2E01846294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{441CB6A8-F151-4F24-A462-0D2E01846294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{441CB6A8-F151-4F24-A462-0D2E01846294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{441CB6A8-F151-4F24-A462-0D2E01846294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{998FC051-ACF3-4A8C-8163-C35E525B4D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{998FC051-ACF3-4A8C-8163-C35E525B4D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{998FC051-ACF3-4A8C-8163-C35E525B4D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{998FC051-ACF3-4A8C-8163-C35E525B4D1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47C1D610-AEAF-4646-8843-3509021DA0E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47C1D610-AEAF-4646-8843-3509021DA0E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47C1D610-AEAF-4646-8843-3509021DA0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47C1D610-AEAF-4646-8843-3509021DA0E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AE3B0EE-DDF9-4A39-BBA4-3CDC75C2A6D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AE3B0EE-DDF9-4A39-BBA4-3CDC75C2A6D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AE3B0EE-DDF9-4A39-BBA4-3CDC75C2A6D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AE3B0EE-DDF9-4A39-BBA4-3CDC75C2A6D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F187381F-5C29-43A9-8ADD-7C794814CC38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F187381F-5C29-43A9-8ADD-7C794814CC38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F187381F-5C29-43A9-8ADD-7C794814CC38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F187381F-5C29-43A9-8ADD-7C794814CC38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C69F677-2F58-4395-8170-F1A67E5351DD}
+	EndGlobalSection
+EndGlobal
