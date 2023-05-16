@@ -46,6 +46,14 @@
     * Customer creates a roadside assistance service request
     * Reserve an assistant
 
+    Business Logic
+        * System find 3 available assistants near by based customer location
+        * System send notification message for this service request
+        * System collects the notification response and auto allocate an assistant
+        * System send the auto allocation notification to assistant, then he starts servicing the request
+        * System will wait for 20 seconds, if no response from any assistant, then it cancel the operation
+        * In case of no assistant reserved, then user has to request again.
+
     Input
         * customer - customer with a service request
         * customer location - (x, y)
@@ -55,14 +63,6 @@
     Acceptance Criteria
         * Customer should reserve an assistant
         * If no available assistants are found, then return empty
-
-    Business Logic
-        * System find 3 available assistants near by based customer location
-        * System send notification message for this service request
-        * System collects the notification response and auto allocate an assistant
-        * System send the auto allocation notification to assistant, then he starts servicing the request
-        * System will wait for 20 seconds, if no response from any assistant, then it cancel the operation
-        * In case of no assistant reserved, then user has to request again.
 
 #### User Story(US3) STEP 4- Create a REST method for release an assistant   
     * Once the job done, release the assistant
@@ -75,7 +75,6 @@
 
         Acceptance Criteria
         * The assistant will be released from customer once the job done
-
 
 #### User Story(US4) STEP 5- Create a REST method for an assistant update his location    
     * Assistant should be able to update his location
@@ -111,7 +110,6 @@
     Testing
         * Write unit tests and flow tests for key functionality
 
-        
 ## Tech Stack Details
     .NET Core 6.0 
     ASP.NET MVC Controller Api
@@ -123,7 +121,6 @@
     Serilog
     Microsoft Visual Studio Community 2022 (64-bit)
     Nuget
-
 
 ## Test Data for Swagger
     Run the RoadsideAssistanceApi from Visual Studio 2022
