@@ -8,7 +8,7 @@
         • Reserve a service provider for a customer
         • Release a service provider from a customer
 
-### FEATURE(FS1) MAIN FLOW - Create a REST Api for customer main flow.
+### FEATURE(FS1) MAIN FLOW - Create a REST Api for main flow.
     * Step 1: Check if any available assistants nearby where assistance required
     * Step 2: Customer creates a roadside assistance service request
     * Step 3: reserve an assistant
@@ -27,10 +27,11 @@
         * Persistant store can be hardcoded for demo purpose
 
 #### User Story(US1) STEP 1- Create a REST method for find nearest assistants   
-    * The (x, y) coordinates are used to identify a location
-    * The distance is calculated based on for formula -  Sqrt(power(X2-X1)^2 + power(Y2-Y1)^2)
-    * The assistants are sorted based on the assistants distance from customer location
-    * The occupied assistants should be excluded
+    Business Logic
+        * The (x, y) coordinates are used to identify a location
+        * The distance is calculated based on for formula -  Sqrt(power(X2-X1)^2 + power(Y2-Y1)^2)
+        * The assistants are sorted based on the assistants distance from customer location
+        * The occupied assistants should be excluded
 
     Input
         * limit - no of sorted assistants are returned
