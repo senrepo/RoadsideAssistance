@@ -111,15 +111,15 @@
     Note: The port number might vary based on the debug profile
 
     POST: https://localhost:7027/api/roadsideAssistance/findNearestAssistants/3
-    Input:
  ```json
+    //Input
     {
       "x": 1,
       "y": 3
     }
 ```
-    Output:
  ```json
+    //Output
     [
       {
         "id": 3,
@@ -139,8 +139,8 @@
     ]    
 ```
     POST: https://localhost:7027/api/roadsideAssistance/reserveAssistant
-    Input:
  ```json
+    //Input
     {
       "customer": {
         "id": 1,
@@ -159,18 +159,17 @@
       }
     }
 ```
-    Output:
  ```json
+    //Output
     {
       "id": 3,
       "name": "Pawn",
       "isOccupied": true
     }
 ```
-
     PUT: https://localhost:7027/api/roadsideAssistance/releaseAssistant
-    Input:
  ```json
+    //Input
     {
       "customer": {
         "id": 1,
@@ -189,12 +188,11 @@
 	      "isOccupied": true
 	    }
     }
+    //Output: Http 204 for success
 ```
-    Output: Http 204
-
     PUT: https://localhost:7027/api/roadsideAssistance/updateAssistantLocation
-    Input:
  ```json
+    //Input
     {
       "assistant": {
         "id": 3,
@@ -205,9 +203,8 @@
         "y": 3
       }
     }
+    //Output: Http 204 for success
 ```
-    Ouptput: Http 204
-
 
 ## Unit Test Results
 ![TestResults](https://github.com/senrepo/RoadsideAssistance/blob/main/Readme/TestResults.PNG)
