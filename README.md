@@ -86,4 +86,87 @@
 
             Acceptance Criteria
                 * Customer should be able to update his location and make it available in the assistants pool
-      
+
+## Tech Stack Details
+    .NET Core 6.0 
+    ASP.NET MVC Controller Api
+    Built-in Swagger
+    .NET Core 6.0 Class Libarary
+    Nunit
+    Xunit
+    Moq
+    Serilog
+    Microsoft Visual Studio Community 2022 (64-bit)
+
+
+## Test Data for Swagger
+    Run the RoadsideAssistanceApi from Visual Studio 2022
+    Note: The port number might vary based on the debug profile
+
+    POST: https://localhost:7027/api/roadsideAssistance/findNearestAssistants/3
+    Input:
+    {
+      "x": 1,
+      "y": 3
+    }
+
+    POST: https://localhost:7027/api/roadsideAssistance/reserveAssistant
+    Input:
+    {
+      "customer": {
+        "id": 1,
+        "name": "mike",
+        "serviceRequest": {
+          "id": 1,
+          "problemDescription": "flat tire",
+          "vehicle": {
+            "licensePlate": "AC67024"
+          }
+        }
+      },
+      "geolocation": {
+        "x": 1,
+        "y": 3
+      }
+    }
+
+    PUT: https://localhost:7027/api/roadsideAssistance/releaseAssistant
+    Input:
+    {
+      "customer": {
+        "id": 1,
+        "name": "mike",
+        "serviceRequest": {
+          "id": 1,
+          "problemDescription": "flat tire",
+          "vehicle": {
+            "licensePlate": "AC67024"
+          }
+        }
+      },
+      "assistant": {
+	      "id": 2,
+	      "name": "Muthu",
+	      "isOccupied": true
+	    }
+    }
+
+    PUT: https://localhost:7027/api/roadsideAssistance/updateAssistantLocation
+    Input:
+    {
+      "assistant": {
+        "id": 2,
+        "name": "Muthu"
+      },
+      "geolocation": {
+        "x": 1,
+        "y": 3
+      }
+    }
+
+## Unit Test Results
+
+## Integration Test Results
+
+## More Logs
+   Please refer the log file created in the log folder
