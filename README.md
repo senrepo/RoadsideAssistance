@@ -75,7 +75,7 @@
         * No content (Http 204) for successful operation
 
         Acceptance Criteria
-        * The assistant will be released from customer once the job done
+        * The assistant should be released from customer once the job done
 
 #### User Story(US4) STEP 5- Create a REST method for an assistant update his location    
     * Assistant should be able to update his location
@@ -87,7 +87,7 @@
         * No content (Http 204) for successful operation
 
     Acceptance Criteria
-        * Customer should be able to update his location and make it available in the assistants pool
+        * Assistant should be able to update his location and make it available in the assistants pool
 
 ## Technical Design
     API Layer
