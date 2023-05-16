@@ -10,6 +10,7 @@ namespace RoadsideAssistanceBL.Service
 {
     public class RequestPublisher : IRequestPublisher
     {
+        static object myLocker = new object();
         private List<Assistant> assitants;
         private ServiceRequest serviceRequest;
 
@@ -36,15 +37,11 @@ namespace RoadsideAssistanceBL.Service
                 Assistant reponse = null;
                 Action<Assistant, string> Callback = delegate (Assistant assistant, string decision)
                 {
-                    if (decision == "accepted" && reponse == null)
+                    if (decision == "accepted" && reponse == null && assistant.IsOccupied == false)
                     {
                         Log.Information($"Assitant {assistant.Name} is assigned for work");
-                        lock (assistant)
-                        {
-                            assistant.ConfirmAssignment();
-                        }
-                        reponse = assistant;
-
+                        var val = assistant.ChangeAssignment(true);
+                        if(val) reponse = assistant;
                     }
                 };
                 NotifyAssistants(Callback);
@@ -54,7 +51,7 @@ namespace RoadsideAssistanceBL.Service
                 return reponse;
             }, cancellationToken);
 
-            int timeout = 10 * 1000; //wait for 10 seconds to timeout
+            int timeout = 20 * 1000; //wait for 10 seconds to timeout
             if (await Task.WhenAny(task, Task.Delay(timeout)) == task)
             {
                 return await task;

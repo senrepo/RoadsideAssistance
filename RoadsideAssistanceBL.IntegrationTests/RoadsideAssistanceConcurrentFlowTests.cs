@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.AspNetCore.Identity;
+using Newtonsoft.Json;
 using RoadsideAssistanceBL.DataStore;
 using RoadsideAssistanceBL.Models;
 using RoadsideAssistanceBL.Service;
@@ -57,7 +58,7 @@ namespace RoadsideAssistanceBL.IntegrationTests
 
             //Step 3: Assert with logs
             var json = JsonConvert.SerializeObject(_dataStoreStub.GetAssitants());
-            Console.WriteLine($"{DateTime.Now} Final Database Snapshot: {json}");
+            Console.WriteLine($"Final Database Snapshot: {json}");
             foreach (var task in tasks)
             {
                try
@@ -91,14 +92,14 @@ namespace RoadsideAssistanceBL.IntegrationTests
                     var doWorkTask = Task.Factory.StartNew(() =>
                     {
                         //Delay 1 to 5 seconds randomly to provide the response
-                        var seconds = new Random().Next(5, 10);
+                        var seconds = new Random().Next(3, 5);
                         Thread.Sleep(seconds * 1000);
                     });
 
                     Task.WaitAll(doWorkTask);
-                    _service.ReleaseAssistant(customer, assitant);
+                    _service.ReleaseAssistant(customer, assitant).Wait();
                     location = new Geolocation(random.Next(1, 10), random.Next(1, 10));
-                    _service.UpdateAssistantLocation(assitant, location);
+                    _service.UpdateAssistantLocation(assitant, location).Wait();
                 }
                 else
                 {

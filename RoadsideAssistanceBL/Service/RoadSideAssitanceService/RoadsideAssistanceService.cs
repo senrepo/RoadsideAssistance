@@ -56,7 +56,7 @@ namespace RoadsideAssistanceBL.Service
             {
                 var statusLog = customer.serviceRequest?.StatusLog;
                 statusLog.Add($"{DateTime.Now} Assitant {assistant.Name} is released");
-                assistant.MakeAvailable();
+                assistant.ChangeAssignment(false);
                 _assistantSevice.Save(assistant);
                 _customerSevice.Save(customer);
             });

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -48,9 +49,11 @@ namespace RoadsideAssistanceBL.DataStore
                     }
             };
 
+            var random = new Random();
             foreach(var assistant in list)
             {
-                assistant.MakeAvailable();
+                assistant.UpdateLocation(new Geolocation(random.Next(1, 10), random.Next(1, 10)));
+                assistant.ChangeAssignment(false);
             }
 
             return list;

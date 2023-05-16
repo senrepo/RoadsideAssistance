@@ -46,11 +46,12 @@ namespace RoadsideAssistanceBL.UnitTests
                     }
             };
 
+            var random = new Random();
             foreach (var assistant in list)
             {
-                assistant.MakeAvailable();
+                assistant.UpdateLocation(new Geolocation(random.Next(1, 10), random.Next(1, 10)));
+                assistant.ChangeAssignment(false);
             }
-
             return list;
         }
 

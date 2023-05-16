@@ -22,6 +22,8 @@ namespace RoadsideAssistanceBL.Models
         [JsonProperty]
         private Geolocation _location;
 
+        private static object myLocker = new object();
+
         public async void Notify(ServiceRequest request, Action<Assistant, string> callback)
         {
             Log.Information($"Assitant {this.Name} notified for service request {request.Id}");
@@ -49,19 +51,15 @@ namespace RoadsideAssistanceBL.Models
             request.StatusLog.Add($"{DateTime.Now} Assitant {this.Name} is on the way for service request {request.Id}");
         }
 
-        public void ConfirmAssignment()
+        public bool ChangeAssignment(bool isOccupied)
         {
-            IsOccupied = true;
-        }
-
-        public void MakeAvailable()
-        {
-            IsOccupied = false; //signal available for next work
-            Log.Information($"Assitant {this.Name} reports back to available pool");
-
-            //update the current location
-            var random = new Random();
-            UpdateLocation(new Geolocation(random.Next(1, 10), random.Next(1, 10)));
+            lock(myLocker)
+            {
+                IsOccupied = isOccupied;
+                if (IsOccupied) Log.Information($"Assitant {this.Name} assigned for work");
+                else Log.Information($"Assitant {this.Name} reports back to available pool");
+            }
+            return IsOccupied;
         }
 
         public void UpdateLocation(Geolocation loc)
