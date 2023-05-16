@@ -102,14 +102,14 @@
             * All business service call orchestration logic
 
     Business Logic Layer
-        Business logic components
-        Business service use the Datastore service for save, reterive and update logic
+        * Business logic components
+        * Business service use the Datastore service for save, reterive and update logic
 
     DataStore Layer
-        Out of scope, use the hardcoded values
+        * Out of scope, use the hardcoded values
 
     Testing
-        Write unit tests and flow tests for key functionality
+        * Write unit tests and flow tests for key functionality
 
         
 ## Tech Stack Details
