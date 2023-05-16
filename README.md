@@ -226,6 +226,68 @@
     //Output: Http 204 for success
 ```
 
+## DataStore (Hardcoded)
+
+    //Assistants
+    new List<Assistant>()
+    {
+        new Assistant()
+        {
+            Id = 1,
+            Name = "Rajesh",
+            IsOccupied = false
+        },
+        new Assistant()
+        {
+            Id = 2,
+            Name = "Muthu",
+            IsOccupied = false
+        },
+        new Assistant()
+        {
+            Id = 3,
+            Name = "Pawn",
+            IsOccupied = false
+        }
+    };
+
+    //Customers
+    new List<Customer>()
+    {
+        new Customer()
+        {
+            Id = 1,
+            Name = "Jack",
+            PhoneNumber = "1234567891"
+
+        },
+        new Customer()
+        {
+            Id = 2,
+            Name = "Mike",
+            PhoneNumber = "1234567892"
+        },
+        new Customer()
+        {
+            Id = 3,
+            Name = "Peter",
+            PhoneNumber = "1234567893"
+        },
+        new Customer()
+        {
+            Id = 4,
+            Name = "Joseph",
+            PhoneNumber = "1234567894"
+        },
+        new Customer()
+        {
+            Id = 5,
+            Name = "Kris",
+            PhoneNumber = "1234567895"
+        }
+    };
+
+
 ## Unit Test Results
 ![TestResults](https://github.com/senrepo/RoadsideAssistance/blob/main/Readme/TestResults.PNG)
 
