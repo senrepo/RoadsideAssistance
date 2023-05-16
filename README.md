@@ -110,15 +110,15 @@
     Run the RoadsideAssistanceApi from Visual Studio 2022
     Note: The port number might vary based on the debug profile
 
-    POST: https://localhost:7027/api/roadsideAssistance/findNearestAssistants/3
  ```json
+     //POST: https://localhost:7027/api/roadsideAssistance/findNearestAssistants/3
+
     //Input
     {
       "x": 1,
       "y": 3
     }
-```
- ```json
+
     //Output
     [
       {
@@ -138,8 +138,9 @@
       }
     ]    
 ```
-    POST: https://localhost:7027/api/roadsideAssistance/reserveAssistant
  ```json
+    //POST: https://localhost:7027/api/roadsideAssistance/reserveAssistant
+
     //Input
     {
       "customer": {
@@ -158,8 +159,7 @@
         "y": 3
       }
     }
-```
- ```json
+
     //Output
     {
       "id": 3,
@@ -167,8 +167,9 @@
       "isOccupied": true
     }
 ```
-    PUT: https://localhost:7027/api/roadsideAssistance/releaseAssistant
  ```json
+    //PUT: https://localhost:7027/api/roadsideAssistance/releaseAssistant
+
     //Input
     {
       "customer": {
@@ -188,10 +189,12 @@
 	      "isOccupied": true
 	    }
     }
+
     //Output: Http 204 for success
 ```
-    PUT: https://localhost:7027/api/roadsideAssistance/updateAssistantLocation
  ```json
+    //PUT: https://localhost:7027/api/roadsideAssistance/updateAssistantLocation
+
     //Input
     {
       "assistant": {
