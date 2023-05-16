@@ -2,90 +2,96 @@
 
 
 ## EPIC(ES1) Roadside Assistance Requirements
-    Develop an application for below functionality
+    Develop an application for the below functionality
         • Update location of a service provider
         • Return the nearest service trucks ordered by ascending distance
         • Reserve a service provider for a customer
         • Release a service provider from a customer
 
-    ### FEATURE(FS1) MAIN FLOW - Create a REST Api for customer main flow.
-        * Step 1: Check if any available assistants near by where an assistance needed
-        * Step 2: Customer creates a roadside assitance service request
-        * Step 3: resserve an assitant
-        * Step 4: Once the job done, release the assitant
-        * Step 5: assistant update his location
+### FEATURE(FS1) MAIN FLOW - Create a REST Api for customer main flow.
+    * Step 1: Check if any available assistants nearby where assistance required
+    * Step 2: Customer creates a roadside assistance service request
+    * Step 3: reserve an assistant
+    * Step 4: Once the job done, release the assistant
+    * Step 5: assistant update his location
 
-        In-Scope
-           * Validate the customer and assitant exists in the datastore
-           * Api should enforece all the required field validation
-           * Write the unit tests for the key functionality in Business logic layer and Api layer
-           * Write the integration tests for key functionlity in Business logic layer and Api layer
+    In-Scope
+        * Validate the customer and assistant exists in the datastore
+        * Api should enforce all the required field validation
+        * Write the unit tests for the key functionality in Business logic layer and Api layer
+        * Write the integration tests for key functionality in Business logic layer and Api layer
 
-        Out-Of-Scope
-            Creating a API for new customer and assitant. Some hardcoded customers and assitants objects can be used.
+    Out-Of-Scope
+        * Create a API for new customer and assistant are out of scope. 
+        * Some hardcoded customers and assistants objects can be used.
+        * Persistant store can be hardcoded for demo purpose
 
-         #### User Story(US1) STEP 1- Create a REST method for find nearest assistants   
-            * The (x, y) coordinates are used to identify a location
-            * The distance is calculated based on for formula -  Sqrt(power(X2-X1)^2 + power(Y2-Y1)^2)
-            * The assitatns are sorted based on the assitants distance from customer location
-            * The occupied assitatants should be excluded
+#### User Story(US1) STEP 1- Create a REST method for find nearest assistants   
+    * The (x, y) coordinates are used to identify a location
+    * The distance is calculated based on for formula -  Sqrt(power(X2-X1)^2 + power(Y2-Y1)^2)
+    * The assistants are sorted based on the assistants distance from customer location
+    * The occupied assistants should be excluded
 
-            Input
-                * limit - no of sorted assitants are retured
-                * customer location - (x, y)
-            Output
-                * returns the assitatns not greater than the limit
+    Input
+        * limit - no of sorted assistants are returned
+        * customer location - (x, y)
+    Output
+        * returns the assistants not greater than the limit
 
-            Acceptance Criteria
-                Api should return the available assitants not greater than the limit
-                If no available assitants are found, then return empty
+    Acceptance Criteria
+        Api should return the available assistants not greater than the limit
+        If no available assistants are found, then return empty
 
-         #### User Story(US2) STEP 3- Create a REST method for reserve an assistant
-            * Customer creates a roadside assitance service request
-            * Resserve an assitant
+    #### User Story(US2) STEP 3- Create a REST method for reserve an assistant
+    * Customer creates a roadside assistance service request
+    * Reserve an assistant
 
-            Input
-                * customer - customer with a service request
-                * customer location - (x, y)
-            Output
-                * returns a nearest available assitant 
+    Input
+        * customer - customer with a service request
+        * customer location - (x, y)
+    Output
+        * returns a nearest available assistant 
 
-            Acceptance Criteria
-                * Customer should reserve an assitant
-                * If no available assitants are found, then return empty
+    Acceptance Criteria
+        * Customer should reserve an assistant
+        * If no available assistants are found, then return empty
 
-            Business Logic
-                * System find 3 available assistants near by based customer location
-                * System send notification message for this service request
-                * System collects the notification response and auto allocate an assistant
-                * System send the auto allocation notification to assitant, then he starts servicing the request
-                * System will wait for 20 seconds, if no response from any assistant, then it cancel the operation
-                * In case of no assitant reserved, then user has to request again.
+    Business Logic
+        * System find 3 available assistants near by based customer location
+        * System send notification message for this service request
+        * System collects the notification response and auto allocate an assistant
+        * System send the auto allocation notification to assistant, then he starts servicing the request
+        * System will wait for 20 seconds, if no response from any assistant, then it cancel the operation
+        * In case of no assistant reserved, then user has to request again.
 
-         #### User Story(US3) STEP 4- Create a REST method for release an assistant   
-            * Once the job done, release the assitant
+#### User Story(US3) STEP 4- Create a REST method for release an assistant   
+    * Once the job done, release the assistant
 
-            Input
-                * customer - customer with a service request
-                * assitant 
-            Output
-                * No content (Http 204) for successful operation
+    Input
+        * customer - customer with a service request
+        * assistant 
+    Output
+        * No content (Http 204) for successful operation
 
-             Acceptance Criteria
-                * The assitant will be released from customer once the job done
+        Acceptance Criteria
+        * The assistant will be released from customer once the job done
 
 
-         #### User Story(US4) STEP 5- Create a REST method for an assistant update his location    
-            * Assistant should be able ot update his location
+#### User Story(US4) STEP 5- Create a REST method for an assistant update his location    
+    * Assistant should be able to update his location
 
-            Input
-                * assitant 
-                * customer location - (x, y)
-            Output
-                * No content (Http 204) for successful operation
+    Input
+        * assistant 
+        * customer location - (x, y)
+    Output
+        * No content (Http 204) for successful operation
 
-            Acceptance Criteria
-                * Customer should be able to update his location and make it available in the assistants pool
+    Acceptance Criteria
+        * Customer should be able to update his location and make it available in the assistants pool
+
+## Technical Design
+    
+
 
 ## Tech Stack Details
     .NET Core 6.0 
@@ -97,6 +103,7 @@
     Moq
     Serilog
     Microsoft Visual Studio Community 2022 (64-bit)
+    Nuget
 
 
 ## Test Data for Swagger
@@ -105,13 +112,15 @@
 
     POST: https://localhost:7027/api/roadsideAssistance/findNearestAssistants/3
     Input:
+ ```json
     {
       "x": 1,
       "y": 3
     }
-
+```
     POST: https://localhost:7027/api/roadsideAssistance/reserveAssistant
     Input:
+ ```json
     {
       "customer": {
         "id": 1,
@@ -129,9 +138,10 @@
         "y": 3
       }
     }
-
+```
     PUT: https://localhost:7027/api/roadsideAssistance/releaseAssistant
     Input:
+ ```json
     {
       "customer": {
         "id": 1,
@@ -150,8 +160,9 @@
 	      "isOccupied": true
 	    }
     }
-
+```
     PUT: https://localhost:7027/api/roadsideAssistance/updateAssistantLocation
+ ```json
     Input:
     {
       "assistant": {
@@ -163,6 +174,7 @@
         "y": 3
       }
     }
+```
 
 ## Unit Test Results
 ![TestResults](https://github.com/senrepo/RoadsideAssistance/blob/main/Readme/TestResults.PNG)
