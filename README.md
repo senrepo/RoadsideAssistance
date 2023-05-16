@@ -90,9 +90,28 @@
         * Customer should be able to update his location and make it available in the assistants pool
 
 ## Technical Design
-    
+    API Layer
+        Api Controllers
+            * validate the input
+            * call processor to process the request
+            * convert the response to http content format
+        Processors
+            * validate the input with repository methods
+            * mapping logic (DTO -> Modal vice versa)
+        Repository
+            * All business service call orchestration logic
 
+    Business Logic Layer
+        Business logic components
+        Business service use the Datastore service for save, reterive and update logic
 
+    DataStore Layer
+        Out of scope, use the hardcoded values
+
+    Testing
+        Write unit tests and flow tests for key functionality
+
+        
 ## Tech Stack Details
     .NET Core 6.0 
     ASP.NET MVC Controller Api
