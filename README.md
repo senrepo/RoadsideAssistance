@@ -1,12 +1,12 @@
-# Roadside Assistance Demo Application
+# Roadside Assistance Application - Homework
 
 
 ## EPIC(ES1) Roadside Assistance Requirements
     Develop an application for below functionality
-        • Update location of a service provider
-        • Return the nearest service trucks ordered by ascending distance
-        • Reserve a service provider for a customer
-        • Release a service provider from a customer
+        â€¢ Update location of a service provider
+        â€¢ Return the nearest service trucks ordered by ascending distance
+        â€¢ Reserve a service provider for a customer
+        â€¢ Release a service provider from a customer
 
     ### FEATURE(FS1) MAIN FLOW - Create a REST Api for customer main flow.
         * Step 1: Check if any available assistants near by where an assistance needed
