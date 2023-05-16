@@ -42,7 +42,7 @@
         Api should return the available assistants not greater than the limit
         If no available assistants are found, then return empty
 
-    #### User Story(US2) STEP 3- Create a REST method for reserve an assistant
+#### User Story(US2) STEP 3- Create a REST method for reserve an assistant
     * Customer creates a roadside assistance service request
     * Reserve an assistant
 
@@ -118,6 +118,26 @@
       "y": 3
     }
 ```
+    Output:
+ ```json
+    [
+      {
+        "id": 3,
+        "name": "Pawn",
+        "isOccupied": false
+      },
+      {
+        "id": 1,
+        "name": "Rajesh",
+        "isOccupied": false
+      },
+      {
+        "id": 2,
+        "name": "Muthu",
+        "isOccupied": false
+      }
+    ]    
+```
     POST: https://localhost:7027/api/roadsideAssistance/reserveAssistant
     Input:
  ```json
@@ -139,6 +159,15 @@
       }
     }
 ```
+    Output:
+ ```json
+    {
+      "id": 3,
+      "name": "Pawn",
+      "isOccupied": true
+    }
+```
+
     PUT: https://localhost:7027/api/roadsideAssistance/releaseAssistant
     Input:
  ```json
@@ -155,19 +184,21 @@
         }
       },
       "assistant": {
-	      "id": 2,
-	      "name": "Muthu",
+	      "id": 3,
+	      "name": "Pawn",
 	      "isOccupied": true
 	    }
     }
 ```
+    Output: Http 204
+
     PUT: https://localhost:7027/api/roadsideAssistance/updateAssistantLocation
- ```json
     Input:
+ ```json
     {
       "assistant": {
-        "id": 2,
-        "name": "Muthu"
+        "id": 3,
+        "name": "Pawn"
       },
       "geolocation": {
         "x": 1,
@@ -175,6 +206,8 @@
       }
     }
 ```
+    Ouptput: Http 204
+
 
 ## Unit Test Results
 ![TestResults](https://github.com/senrepo/RoadsideAssistance/blob/main/Readme/TestResults.PNG)
