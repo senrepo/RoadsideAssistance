@@ -168,6 +168,8 @@
 ![TestResults](https://github.com/senrepo/RoadsideAssistance/blob/main/Readme/TestResults.PNG)
 
 ## Integration Test Results
+![IntegrationTestResults](https://github.com/senrepo/RoadsideAssistance/blob/main/Readme/ConcurrentTestResults.PNG)
 
 ## More Logs
    Please refer the log file created in the log folder
+![LogFile](https://github.com/senrepo/RoadsideAssistance/blob/main/Readme/logfile.PNG)
