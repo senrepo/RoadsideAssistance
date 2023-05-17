@@ -24,7 +24,7 @@
     Out-Of-Scope
         * Create a API for new customer and assistant are out of scope. 
         * Some hardcoded customers and assistants objects can be used.
-        * Persistant store can be hardcoded for demo purpose
+        * Temporary runtime store with hardcoded values can be used for demo purpose
 
 #### User Story(US1) STEP 1- Create a REST method for find nearest assistants   
     Business Logic
