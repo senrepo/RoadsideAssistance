@@ -68,6 +68,9 @@
 #### User Story(US3) STEP 4- Create a REST method for release an assistant   
     * Once the job done, release the assistant
 
+    Business Logic
+        * once the assistant is released, then he will get added into the availablity pool
+
     Input
         * customer - customer with a service request
         * assistant 
