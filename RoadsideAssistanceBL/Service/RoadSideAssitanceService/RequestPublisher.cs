@@ -51,7 +51,7 @@ namespace RoadsideAssistanceBL.Service
                 return reponse;
             }, cancellationToken);
 
-            int timeout = 20 * 1000; //wait for 10 seconds to timeout
+            int timeout = 20 * 1000; //wait for 20 seconds to timeout
             if (await Task.WhenAny(task, Task.Delay(timeout)) == task)
             {
                 return await task;
