@@ -21,8 +21,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IRoadSideDataStore, RoadSideDataStore>();
-builder.Services.AddSingleton<IAssistantService, AssistantService>();
-builder.Services.AddSingleton<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IAssistantService, AssistantService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IRoadsideAssistanceRepository, RoadsideAssistanceRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IAssistantRepository, AssistantRepository>();
