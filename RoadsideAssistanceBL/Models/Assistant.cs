@@ -17,7 +17,7 @@ namespace RoadsideAssistanceBL.Models
         public string Name { get; set; }
 
         [JsonProperty]
-        public bool IsOccupied { get; set; }
+        public volatile bool IsOccupied;
 
         [JsonProperty]
         private Geolocation _location;
